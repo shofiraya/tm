@@ -1,5 +1,5 @@
 class Timer {
- String name;
+ String title;
  String image;
  String description;
  double time;
@@ -7,7 +7,7 @@ class Timer {
  String language;
 
  Timer({
-   required this.name,
+   required this.title,
    required this.image,
    required this.description,
    required this.time,
@@ -18,7 +18,7 @@ class Timer {
 
 List<Timer> listTimer = [
  Timer(
-     name: 'Belajar',
+     title: 'Belajar',
      image: 'images/cat1.png',
      description:
          'Fokus belajar dengan time block',
@@ -26,7 +26,7 @@ List<Timer> listTimer = [
      categoryBook: 'Sysadmin IDN',
      language: 'IDN'),
  Timer(
-     name: 'Pomodoro',
+     title: 'Pomodoro',
      image: 'images/cat1.png',
      description:
          'Fokus belajar dengan metode pomodoro',
@@ -34,7 +34,7 @@ List<Timer> listTimer = [
      categoryBook: 'Sysadmin IDN',
      language: 'IDN'),
  Timer(
-     name: 'Belajar Pemrograman',
+     title: 'Belajar Pemrograman',
      image: 'images/cat1.png',
      description:
          'Belajar pemrograman untuk UTS',
@@ -42,7 +42,7 @@ List<Timer> listTimer = [
      categoryBook: 'Sysadmin IDN',
      language: 'IDN'),
   Timer(
-     name: 'Belajar Pemrograman',
+     title: 'Belajar Pemrograman',
      image: 'images/cat1.png',
      description:
          'Belajar pemrograman untuk UTS',

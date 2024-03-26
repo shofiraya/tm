@@ -1,21 +1,14 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:tm_app/rekomendasi_tile.dart';
 import 'package:tm_app/theme.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key});
 
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber,
+      backgroundColor: ripeMango,
       body: SafeArea(
         child: Column(
           children: [
@@ -34,7 +27,7 @@ class _HomePageState extends State<HomePage> {
                             'Hi, Mindy',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 31.55,
+                              fontSize: 25,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -45,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                             'Yuk, capai target fokusmu hari ini',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 19.68,
+                              fontSize: 15,
                             ),
                           ),
                         ],
@@ -53,14 +46,10 @@ class _HomePageState extends State<HomePage> {
 
                       // Gambar Mindy
                       Container(
-                        decoration: BoxDecoration(
-                          color: Colors.yellow[200],
-                          borderRadius: BorderRadius.circular(20),
-                        ),
                         padding: EdgeInsets.all(12),
-                        child: Icon(
-                          Icons.star_outlined,
-                          color: Colors.white,
+                        child: Image.asset(
+                          "images/cat3.png",
+                          height: 40,
                         ),
                       )
                     ],
@@ -72,43 +61,108 @@ class _HomePageState extends State<HomePage> {
               height: 25,
             ),
             Expanded(
-              child: Container(
-                padding: EdgeInsets.all(25),
-                color: Colors.white,
-                child: Center(
-                  child: Column(
+              child: ListView(
+                children: [
+                  Column(
                     children: [
-                      //rekomendasi heading
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Icon(Icons.star_rate),
-                          Text(
-                            'Rekomendasi',
-                            style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.bold),
-                          ),
-                          Icon(Icons.more_horiz),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
+                      ClipRRect(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(24.0),
+                          topRight: Radius.circular(24.0),
+                        ),
+                        child: Container(
+                          padding:
+                              EdgeInsets.only(left: 13, top: 50, right: 13),
+                          color: Colors.white,
+                          child: Column(
+                            children: [
+                              // Rekomendasi
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.all(7),
+                                        child: Image.asset(
+                                            "images/icon_sparkling_star.png"),
+                                      ),
+                                      Text(
+                                        'Rekomendasi',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            color: heliotrope),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              // Listview rekomendasi
+                              ListView.builder(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: 2,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return RekomendasiTile();
+                                },
+                              ),
 
-                      //listview rekomendasi
-                      Expanded(
-                        child: ListView(
-                          children: [
-                            RekomendasiTile(),
-                            RekomendasiTile(),
-                            RekomendasiTile(),
-                            RekomendasiTile(),
-                          ],
+                              // Spacer agar ada jarak antara listview
+                              SizedBox(height: 10),
+
+                              // Timer Mu
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: EdgeInsets.all(7),
+                                        child: Icon(
+                                          Icons.hourglass_empty,
+                                          color: ripeMango,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Timer Mu',
+                                        style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.w700,
+                                            color: ripeMango),
+                                      ),
+                                    ],
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 15.0),
+                                    child: Text(
+                                      "Lihat Semua",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        color: ripeMango,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              // Listview timer mu
+                              ListView.builder(
+                                shrinkWrap: true,
+                                physics: NeverScrollableScrollPhysics(),
+                                itemCount: 4,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return RekomendasiTile();
+                                },
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
-                ),
+                ],
               ),
             ),
           ],

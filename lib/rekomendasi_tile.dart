@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tm_app/theme.dart';
 
 class RekomendasiTile extends StatelessWidget {
   const RekomendasiTile({super.key});
@@ -9,8 +10,9 @@ class RekomendasiTile extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+        padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: offOrange,
           borderRadius: BorderRadius.circular(16),
         ),
         child: Row(
@@ -19,42 +21,58 @@ class RekomendasiTile extends StatelessWidget {
             Row(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(100),
                   child: Container(
-                    padding: EdgeInsets.all(16),
-                    color: Colors.orange,
-                    child: Icon(Icons.favorite),
+                    padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
+                    color: merah,
+                    child: Image.asset(
+                      "images/cat1.png",
+                      height: 30,
+                    ),
                   ),
                 ),
                 SizedBox(
-                  width: 12,
+                  width: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Belajar Pemrograman',
+                      'Belajar',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 16,
+                        fontSize: 12,
                       ),
                     ),
                     SizedBox(
                       height: 5,
                     ),
                     Text(
-                      'Belajar Pemrograman',
+                      'Fokus belajar dengan time block',
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey,
-                        fontSize: 14,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 10,
                       ),
                     ),
                   ],
                 ),
               ],
             ),
-            Icon(Icons.more_horiz),
+            Column(
+              children: [
+                Text(
+                  "00:40:00",
+                  style: TextStyle(
+                    fontSize: 8,
+                    color: darkGrey,
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Image.asset("images/button.png"),
+              ],
+            ),
           ],
         ),
       ),
