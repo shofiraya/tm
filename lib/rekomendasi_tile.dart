@@ -26,7 +26,7 @@ class RekomendasiTile extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 8, horizontal: 10),
                     color: merah,
                     child: Image.asset(
-                      "images/cat1.png",
+                      "assets/images/cat1.png",
                       height: 30,
                     ),
                   ),
@@ -70,7 +70,7 @@ class RekomendasiTile extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Image.asset("images/button.png"),
+                Image.asset("assets/images/button.png"),
               ],
             ),
           ],

@@ -1,58 +1,40 @@
 class Timer {
- String title;
- String image;
- String description;
- double time;
- String categoryBook;
- String language;
+  String title;
+  String image;
+  String description;
+  String time;
 
- Timer({
-   required this.title,
-   required this.image,
-   required this.description,
-   required this.time,
-   required this.categoryBook,
-   required this.language,
- });
+  Timer({
+    required this.image,
+    required this.title,
+    required this.description,
+    required this.time,
+  });
 }
 
-List<Timer> listTimer = [
- Timer(
-     title: 'Belajar',
-     image: 'images/cat1.png',
-     description:
-         'Fokus belajar dengan time block',
-     time: 4.3,
-     categoryBook: 'Sysadmin IDN',
-     language: 'IDN'),
- Timer(
-     title: 'Pomodoro',
-     image: 'images/cat1.png',
-     description:
-         'Fokus belajar dengan metode pomodoro',
-     time: 4.2,
-     categoryBook: 'Sysadmin IDN',
-     language: 'IDN'),
- Timer(
-     title: 'Belajar Pemrograman',
-     image: 'images/cat1.png',
-     description:
-         'Belajar pemrograman untuk UTS',
-     time: 4.2,
-     categoryBook: 'Sysadmin IDN',
-     language: 'IDN'),
+var Timerlist = [
   Timer(
-     title: 'Belajar Pemrograman',
-     image: 'images/cat1.png',
-     description:
-         'Belajar pemrograman untuk UTS',
-     time: 4.2,
-     categoryBook: 'Sysadmin IDN',
-     language: 'IDN'),
+      image: 'assets/images/cat1.png',
+      title: 'Belajar',
+      description: 'Fokus belajar dengan time block',
+      time: '00:40:00',
+  ),
+  Timer(
+      image: 'assets/images/cat1.png',
+      title: 'Pomodoro',
+      description: 'Fokus belajar dengan metode pomodoro',
+      time: '00:40:00',
+  ),
+  Timer(
+      image: 'assets/images/cat1.png',
+      title: 'Belajar Pemrograman',
+      description: 'Belajar pemrograman untuk UTS',
+      time: '00:40:00',
+  ),
+  Timer(
+      image: 'assets/images/cat1.png',
+      title: 'Belajar Pemrograman',
+      description: 'Belajar pemrograman untuk UTS',
+      time: '00:40:00',
+  )
 ];
-
-
-
-
-
-

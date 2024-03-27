@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tm_app/rekomendasi_tile.dart';
 import 'package:tm_app/theme.dart';
+import 'package:tm_app/timer.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key});
@@ -48,7 +49,7 @@ class HomePage extends StatelessWidget {
                       Container(
                         padding: EdgeInsets.all(12),
                         child: Image.asset(
-                          "images/cat3.png",
+                          "assets/images/cat3.png",
                           height: 40,
                         ),
                       )
@@ -74,6 +75,7 @@ class HomePage extends StatelessWidget {
                           padding:
                               EdgeInsets.only(left: 13, top: 50, right: 13),
                           color: Colors.white,
+                          // height: double.infinity,
                           child: Column(
                             children: [
                               // Rekomendasi
@@ -86,7 +88,7 @@ class HomePage extends StatelessWidget {
                                       Container(
                                         padding: EdgeInsets.all(7),
                                         child: Image.asset(
-                                            "images/icon_sparkling_star.png"),
+                                            "assets/images/icon_sparkling_star.png"),
                                       ),
                                       Text(
                                         'Rekomendasi',
@@ -103,9 +105,26 @@ class HomePage extends StatelessWidget {
                               ListView.builder(
                                 shrinkWrap: true,
                                 physics: NeverScrollableScrollPhysics(),
-                                itemCount: 2,
+                                itemCount: Timerlist.length,
                                 itemBuilder: (BuildContext context, int index) {
+                                  final Timer = Timerlist[index];
                                   return RekomendasiTile();
+                                  // return ListTile(
+                                  //   leading: Icon(
+                                  //     Icons.account_circle,
+                                  //     color: Colors.black45,
+                                  //     size: 58,
+                                  //   ),
+                                  //   title: Text(
+                                  //     Timer.title,
+                                  //   ),
+                                  //   subtitle: Text(
+                                  //     Timer.description,
+                                  //     style: const TextStyle(
+                                  //         color: Colors.black45, fontSize: 16),
+                                  //   ),
+                                  //   trailing: Text(Timer.time),
+                                  // );
                                 },
                               ),
 
@@ -147,15 +166,16 @@ class HomePage extends StatelessWidget {
                                   ),
                                 ],
                               ),
-                              // Listview timer mu
-                              ListView.builder(
-                                shrinkWrap: true,
-                                physics: NeverScrollableScrollPhysics(),
-                                itemCount: 4,
-                                itemBuilder: (BuildContext context, int index) {
-                                  return RekomendasiTile();
-                                },
-                              ),
+                              //Listview timer mu
+                              // ListView.builder(
+                              //   shrinkWrap: true,
+                              //   physics: NeverScrollableScrollPhysics(),
+                              //   itemCount: Timerlist.length,
+                              //   itemBuilder: (BuildContext context, int index) {
+                              //     final Lists = Timerlist[index];
+                              //     return RekomendasiTile();
+                              //   },
+                              // ),
                             ],
                           ),
                         ),
